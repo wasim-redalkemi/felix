@@ -1,0 +1,188 @@
+@use "sass:map";
+
+//google fonts
+@import "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+
+$fonts : (
+	"body" : "Work Sans",
+	"heading" : "Bitter",
+	"default" : sans-serif
+);
+
+$colors : (
+	"color1" : #0F2F47,
+	"color2" : #EEAD24,
+	"color3" : #4694AF,
+	"color4" : #ECDED0,
+);
+
+$font-sizes : (
+	"body" : 16px,
+	"h1" : 72px,
+	"h2" : 48px,
+	"h3" : 36px,
+);
+$line-heights : (
+	"body" : (map.get($font-sizes, "body")*1.5),
+	"h1" : (map.get($font-sizes, "h1")*1.5),
+	"h2" : (map.get($font-sizes, "h2")*1.5),
+	"h3" : (map.get($font-sizes, "h3")*1.5),
+);
+
+$font-weights : (
+	"regular" : 400,
+	"medium" : 500,
+	"bold" : 600,
+	"x-bold" : 700,
+	"xx-bold" : 800,
+); 
+
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	font-family: map.get($fonts, "body"),map.get($fonts, "default");
+	font-size: map.get($font-sizes, "body");
+	line-height: map.get($line-heights, "body");
+	font-weight: map.get($font-weights, "regular");
+	color: map.get($colors, "color1");
+}
+p{
+	margin: 0 0 15px;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: map.get($fonts, "heading"),map.get($fonts, "default");
+	margin: 0 0 15px;
+}
+h1{
+	font-size: map.get($font-sizes, "h1");
+	line-height: map.get($line-heights, "h1");
+	font-weight: map.get($font-weights, "bold");
+}
+h2{
+	font-size: map.get($font-sizes, "h2");
+	line-height: map.get($line-heights, "h2");
+	font-weight: map.get($font-weights, "medium");
+}
+h3{
+	font-size: map.get($font-sizes, "h2");
+	line-height: map.get($line-heights, "h2");
+	font-weight: map.get($font-weights, "bold");
+}
+a, a:hover{
+	text-decoration: none;
+}
+img{
+	max-width: 100%;
+}
+
+.container{
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+	.col{
+		padding: 0 15px;
+		flex-basis: 100%;
+		max-width: 100%;
+	}
+}
+
+.d-flex{
+	display: flex;
+}
+.align-items-center{
+	align-items: center;
+}
+.justify-content-between{
+	justify-content: space-between;
+}
+
+.btn{
+	background: map.get($colors, "color2");
+	border-radius: 2px;
+	letter-spacing: 0.054em;
+	font-weight: 700;
+	min-width: 115px;
+	text-align: center;
+	display: inline-block;
+	font-size: 18px;
+	padding: 0 15px;
+	height: 30px;
+	line-height: 30px;
+	color: map.get($colors, "color1");
+}
+
+
+.header{
+	padding: 15px 0;
+	background: #fff;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	.logo{
+		img{
+			max-width: 90px;
+		}
+	}
+	.nav{
+		.nav-link{
+			color: map.get($colors, "color1");
+			font-size: 18px;
+			padding: 0 15px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			&.header-btn{
+				@extend .btn;
+			}
+		}
+	}
+}
+
+
+.footer {
+  background: map.get($colors, "color1");
+  padding: 30px 0;
+  .logo{
+		img{
+			max-width: 90px;
+		}
+	}
+	.nav{
+		.nav-item, .nav-link{
+			display: inline-block;
+			color: #fff;
+			font-size: 14px;
+		}
+		.nav-item{
+			margin-left: 25px;
+		}
+	}
+}
+
+.home-banner{
+	padding: 30px 0;
+	.text-outer{
+		flex-basis: 40%;
+		max-width: 40%;
+		.banner-heading{
+			line-height: 72px;
+		}
+		.banner-desc{
+			font-size: 20px;
+			line-height: 31.6px;
+			letter-spacing: 0.0075em;
+			margin: 0 0 30px;
+		}
+	}
+	.img-outer{
+		flex-basis: 60%;
+		max-width: 60%;
+	}
+}
