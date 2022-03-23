@@ -1,3 +1,4 @@
+import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -13,18 +14,22 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Page404 from "./pages/Page404";
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Header />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Page404 />} />
-        </Routes>
-      <Footer />
-    </BrowserRouter>
-  );
+class App extends Component {
+  render(){
+    return (
+      <BrowserRouter>
+        <Header />
+          <Routes>
+            <Route path="/">
+              <Route index element={<Home />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="*" element={<Page404 />} />
+            </Route>
+          </Routes>
+        <Footer />
+      </BrowserRouter>
+    );
+  }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.querySelector("#root"));
