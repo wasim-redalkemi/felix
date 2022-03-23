@@ -11,10 +11,10 @@ export default function Header() {
               </Link>
             </div>
             <div className="nav">
-              <NavLink to="/" className="nav-link" activeClassName="selected">Features</NavLink>
-              <NavLink to="/" className="nav-link" activeClassName="selected">Showcase</NavLink>
-              <NavLink to="/" className="nav-link" activeClassName="selected">Resell Felix</NavLink>
-              <NavLink to="/contact" className="nav-link header-btn" activeClassName="selected">Get Started</NavLink>
+              <NavLink to="/" className={(navData) => "nav-link " + (navData.isActive ? "selected" : "")}>Features</NavLink>
+              <NavLink to="/" className={(navData) => "nav-link " + (navData.isActive ? "selected" : "")}>Showcase</NavLink>
+              <NavLink to="/" className={(navData) => "nav-link " + (navData.isActive ? "selected" : "")}>Resell Felix</NavLink>
+              <NavLink to="/contact" className={(navData) => "nav-link header-btn " + (navData.isActive ? "selected" : "")}>Get Started</NavLink>
             </div>
           </div>
         </div>
