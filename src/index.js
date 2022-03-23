@@ -23,7 +23,6 @@ class App extends Component {
             <Route path="/">
               <Route index element={<Home />} />
               <Route path="contact" element={<Contact />} />
-              <Route path="about" element={<Contact />} />
               <Route path="*" element={<Page404 />} />
             </Route>
           </Routes>
